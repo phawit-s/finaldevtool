@@ -1,0 +1,22 @@
+version: '3'
+services:
+  frontend:
+    image: phawit/devtool-frontend:1.0.0
+    build: ./front-end
+    restart: always
+    ports:
+      - 3001:80
+  backend:
+    image: phawit/devtool-backend:1.0.0
+    build: ./back-end
+    restart: always
+    ports:
+      - 4000:4000
+  permetheus:
+    image: promcustom
+    build: ./prometheus
+    container_name: prom
+    ports:
+      - 9090:9090
+
+    
