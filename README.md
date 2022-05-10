@@ -1,6 +1,7 @@
 ## Run project
-docker compose up
-
+```
+Run project : docker compose up
+```
 ```
 Frontend : localhost:3001
 Backend : localhost:4000/database (ส่งข้อมูล)
