@@ -22,10 +22,26 @@ mongoose.connection.on("error", () => {
 app.use(cors());
 
 //ทดลอง Database
-app.post('/database', async(req, res) => {
+app.post('/database', async (req, res) => {
     try {
-        let a = new Blog({title : req.body.name})
-        console.log(req.body);
+        let a = new Blog({
+            vaccinationcenter: "สถานีกลางบางซือ",
+            vaccinetype: "3",
+            phonenumber: "0982334567",
+            title: "Mr",
+            gender: "Male",
+            name: req.body.name,
+            surname: req.body.surname,
+            birthday: "12/10/2000",
+            address: "763",
+            provice: "bangkok",
+            district: "prawet",
+            subdistrict: "prawet",
+            zipcode: "10250",
+            vaccinedate: "12/07/2022",
+            vaccinetime: "09:00",
+        })
+        // console.log(req.body);
         await a.save()
         const result = await Blog.find()
         res.send(result)
