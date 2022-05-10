@@ -12,11 +12,13 @@ services:
     restart: always
     ports:
       - 4000:4000
-  # permetheus:
-  #   image: promcustom
-  #   build: ./prometheus
-  #   container_name: prom
-  #   ports:
-  #     - 9090:9090
+      - 9464:9464
+  permetheus:
+    image: promcustom
+    build: ./prometheus
+    container_name: prom
+    ports:
+      - 9090:9090
+    
 
     
