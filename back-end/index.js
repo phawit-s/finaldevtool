@@ -87,26 +87,7 @@ app.get("/", (req, res) => {
     });
 });
 
-app.get('/test', async function (req, res) {
-    counter.add(1, { service_name: "testservice" });
-    counter.add(1, { service_name: "testservice", status: "success", path: "/database" });
-    counter.add(1, { service_name: "testservice", status: "failure", path: "/database" });
-    counter.add(1, { service_name: "testservice", status: "data not found", path: "/database" });
 
-    res.type('json')
-    var delay = Math.floor((Math.random() * 2000) + 100);
-
-    setTimeout((() => {
-        res.send(({
-            movies: [
-                { name: 'Jaws', genre: 'Thriller' },
-                { name: 'Annie', genre: 'Family' },
-                { name: 'Jurassic Park', genre: 'Action' },
-            ]
-        }))
-    }), delay)
-
-})
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
